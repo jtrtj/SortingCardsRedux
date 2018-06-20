@@ -30,5 +30,12 @@ class RoundTest < MiniTest::Test
     expected = @round.guesses.last
 
     assert_equal expected, actual
+    assert_equal 1, @round.guesses.count
+  end
+
+  def test_round_can_get_feedback_on_guesses
+    @round.record_guess('3 of Hearts')
+
+    assert_equal 'Correct!', @round.guesses.first.feedback
   end
 end
