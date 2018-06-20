@@ -24,4 +24,11 @@ class RoundTest < MiniTest::Test
   def test_round_can_check_current_card
     assert_equal @card_1, @round.current_card
   end
+
+  def test_round_can_record_a_guess
+    actual = @round.record_guess('3 of Hearts')
+    expected = @round.guesses.last
+
+    assert_equal expected, actual
+  end
 end

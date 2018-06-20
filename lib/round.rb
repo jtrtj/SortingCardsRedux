@@ -8,4 +8,9 @@ class Round
   def current_card
     deck.cards.first
   end
+
+  def record_guess(guess)
+    guesses << Guess.new(guess, current_card)
+    guesses.last
+  end
 end
