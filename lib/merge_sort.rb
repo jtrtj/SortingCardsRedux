@@ -1,9 +1,9 @@
 module MergeSort
-  def mergesort(list)
-    return list if list.length<= 1
-    mid   = list.size / 2
-    left  = list[0...mid]
-    right = list[mid...list.size]
+  def mergesort(cards)
+    return cards if cards.length<= 1
+    mid   = cards.size / 2
+    left  = cards[0...mid]
+    right = cards[mid...cards.size]
     merge(mergesort(left), mergesort(right))
   end
 
@@ -19,4 +19,5 @@ module MergeSort
     end
     sorted.concat(left).concat(right)
   end
+
 end
