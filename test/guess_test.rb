@@ -46,6 +46,6 @@ class GuessTest < MiniTest::Test
 
     guess = Guess.new('9 of Spades', @card)
 
-    assert_equal 'Incorrect!', guess.feedback
+    assert_equal 'Incorrect.', guess.feedback
   end
 end

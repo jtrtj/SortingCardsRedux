@@ -12,11 +12,7 @@ class Guess
   end
 
   def feedback
-    if correct?
-      'Correct!'
-    else
-      'Incorrect!'
-    end
+    correct? ? 'Correct!' : 'Incorrect.'
   end
 
   def guessed_card
