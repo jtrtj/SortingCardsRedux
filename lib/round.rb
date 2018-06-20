@@ -11,6 +11,15 @@ class Round
 
   def record_guess(guess)
     guesses << Guess.new(guess, current_card)
+    @deck.shift
     guesses.last
+  end
+
+  def number_correct
+    @guesses.inject(0) do |number, guess|
+      if guess.correct?
+        number + 1
+      end
+    end
   end
 end

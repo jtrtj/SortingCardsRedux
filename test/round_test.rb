@@ -38,4 +38,10 @@ class RoundTest < MiniTest::Test
 
     assert_equal 'Correct!', @round.guesses.first.feedback
   end
+
+  def test_round_can_check_how_many_guesses_are_correct
+    @round.record_guess('3 of Hearts')
+
+    assert_equal 1, @round.number_correct
+  end
 end
