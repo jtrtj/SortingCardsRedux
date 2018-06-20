@@ -20,6 +20,15 @@ class GuessTest < MiniTest::Test
     assert_equal '10', guess.response_elements.first
     assert_equal 'Hearts', guess.response_elements.last
   end
+
+  def guess_can_create_guessed_card
+    guess = Guess.new('10 of Hearts', @card)
+
+    assert_instance_of Card, guess.guessed_card
+    assert_equal '10', guess.guessed_card.value
+    assert_equal 'Hearts', guess.guessed_card.suit
+  end
+
   def test_guess_can_tell_if_it_is_correct
     guess = Guess.new('10 of Hearts', @card)
 
