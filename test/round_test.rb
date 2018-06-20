@@ -64,4 +64,11 @@ class RoundTest < MiniTest::Test
     assert_equal 'Incorrect.', @round.guesses.last.feedback
     assert_equal 1, @round.number_correct
   end
+
+  def test_round_can_report_percentage_correct
+    @round.record_guess('3 of Hearts')
+    @round.record_guess('Jack of Diamonds')
+
+    assert_equal 50, @round.percent_correct
+  end
 end

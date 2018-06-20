@@ -19,6 +19,10 @@ class Round
    correct_guesses.count
   end
 
+  def percent_correct
+    (number_correct.to_f / guesses.count.to_f) * 100
+  end
+
   def correct_guesses
     @guesses.find_all do |guess|
       guess.correct?
