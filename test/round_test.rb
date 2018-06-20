@@ -53,4 +53,15 @@ class RoundTest < MiniTest::Test
     assert_equal @card_2, @round.current_card
   end
 
+  def test_round_can_have_second_guess_and_tell_if_it_is_correct
+    @round.record_guess('3 of Hearts')
+
+    assert_equal @card_2, @round.current_card
+
+    @round.record_guess('Jack of Diamonds')
+
+    assert_equal 2, @round.guesses.count
+    assert_equal 'Incorrect.', @round.guesses.last.feedback
+    assert_equal 1, @round.number_correct
+  end
 end

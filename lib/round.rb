@@ -16,10 +16,12 @@ class Round
   end
 
   def number_correct
-    @guesses.inject(0) do |number, guess|
-      if guess.correct?
-        number + 1
-      end
+   correct_guesses.count
+  end
+
+  def correct_guesses
+    @guesses.find_all do |guess|
+      guess.correct?
     end
   end
 end
