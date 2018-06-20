@@ -16,4 +16,12 @@ class RoundTest < MiniTest::Test
   def test_round_has_a_deck
     assert_equal @deck, @round.deck
   end
+
+  def test_round_starts_with_no_guesses
+    assert_equal [], @round.guesses
+  end
+
+  def test_round_can_check_current_card
+    assert_equal @card_1, @round.current_card
+  end
 end
