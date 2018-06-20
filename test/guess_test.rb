@@ -14,14 +14,14 @@ class GuessTest < MiniTest::Test
     assert_equal '10 of Hearts', guess.response
   end
 
-  def  guess_can_be_split_into_value_and_suit
+  def test_guess_can_be_split_into_value_and_suit
     guess = Guess.new('10 of Hearts', @card)
 
     assert_equal '10', guess.response_elements.first
     assert_equal 'Hearts', guess.response_elements.last
   end
 
-  def guess_can_create_guessed_card
+  def test_guess_can_create_guessed_card
     guess = Guess.new('10 of Hearts', @card)
 
     assert_instance_of Card, guess.guessed_card
