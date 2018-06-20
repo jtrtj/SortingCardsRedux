@@ -11,7 +11,11 @@ class DeckTest < MiniTest::Test
     @deck = Deck.new([@card_1, @card_2, @card_3])
   end
 
-  def test_deck_has_cards
+  def test_deck_has_cards_in_an_array
     assert_equal [@card_1, @card_2, @card_3], @deck.cards
+  end
+
+  def test_deck_can_be_counted
+    assert_equal 3, @deck.count
   end
 end
