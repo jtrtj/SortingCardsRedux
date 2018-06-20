@@ -11,6 +11,14 @@ class Guess
     guessed_card.value == card.value && guessed_card.suit == card.suit
   end
 
+  def feedback
+    if correct?
+      'Correct!'
+    else
+      'Incorrect!'
+    end
+  end
+
   def guessed_card
     Card.new(response_elemnets.first, response_elemnets.last)
   end
