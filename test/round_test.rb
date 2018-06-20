@@ -44,4 +44,13 @@ class RoundTest < MiniTest::Test
 
     assert_equal 1, @round.number_correct
   end
+
+  def test_after_guess_is_made_current_card_is_next_card
+    assert_equal @card_1, @round.current_card
+
+    @round.record_guess('3 of Hearts')
+
+    assert_equal @card_2, @round.current_card
+  end
+
 end

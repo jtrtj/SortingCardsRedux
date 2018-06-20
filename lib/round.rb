@@ -11,7 +11,7 @@ class Round
 
   def record_guess(guess)
     guesses << Guess.new(guess, current_card)
-    @deck.shift
+    @deck.cards.shift
     guesses.last
   end
 
