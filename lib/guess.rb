@@ -16,10 +16,10 @@ class Guess
   end
 
   def guessed_card
-    Card.new(response_elemnets.first, response_elemnets.last)
+    Card.new(response_elements.first, response_elements.last)
   end
 
-  def response_elemnets
+  def response_elements
     response.split
   end
 end
