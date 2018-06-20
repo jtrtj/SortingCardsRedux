@@ -11,7 +11,7 @@ module MergeSort
   def merge(left, right)
     sorted = []
     until left.empty? || right.empty?
-      if left.first.value <= right.first.value
+      if left.first.int_value <= right.first.int_value
         sorted << left.shift
       else
         sorted << right.shift
