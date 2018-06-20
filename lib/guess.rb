@@ -6,4 +6,16 @@ class Guess
     @response = response
     @card     = card
   end
+
+  def correct?
+    guessed_card.value == card.value && guessed_card.suit == card.suit
+  end
+
+  def guessed_card
+    Card.new(response_elemnets.first, response_elemnets.last)
+  end
+
+  def response_elemnets
+    response.split
+  end
 end
