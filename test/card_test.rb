@@ -9,4 +9,14 @@ class CardTest < Minitest::Test
     assert_equal 'Ace', card.value
     assert_equal 'Spades', card.suit
   end
+
+  def test_card_has_integer_value
+    card = Card.new('Ace', 'Spades')
+
+    assert_equal 1, card.int_value
+
+    card = Card.new('3', 'Hearts')
+
+    assert_equal 3, card.int_value
+  end
 end
